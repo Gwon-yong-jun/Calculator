@@ -18,7 +18,7 @@ public class App {
                     break;
                 } catch (InputMismatchException e) {
                     System.out.println("숫자를 입력하세요.");
-                    scanner.nextLine(); // 입력 버퍼 비우기
+                    scanner.nextLine();
                 }
             }
 
@@ -45,7 +45,7 @@ public class App {
                     }
                 } catch (InputMismatchException e) {
                     System.out.println("숫자를 입력하세요.");
-                    scanner.nextLine(); // 입력 버퍼 비우기
+                    scanner.nextLine();
                 }
             }
 
