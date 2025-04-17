@@ -7,7 +7,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        double result; 
+        double result;  
 
         while (true) {
             int num1 = 0;
@@ -50,7 +50,8 @@ public class App {
                     scanner.nextLine();
                 }
             }
-            
+
+         
             switch (operator) {
                 case '+':
                     result = num1 + num2;
@@ -69,7 +70,12 @@ public class App {
                     continue;
             }
 
-            System.out.println("결과: " + result);
+           
+            if (operator == '/') {
+                System.out.println("결과: " + result); 
+            } else {
+                System.out.println("결과: " + (int) result);  
+            }
 
             System.out.print("계속 하시겠습니까? (exit 입력 시 종료): ");
             String exit = scanner.next();
