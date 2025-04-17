@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    private static List history = new ArrayList();
+    public static List<String> history = new ArrayList<>();
 
     public static double calculate(int num1, int num2, char operator) {
         double result;
@@ -29,16 +29,20 @@ public class Calculator {
                 throw new IllegalArgumentException("잘못된 연산자입니다.");
         }
 
-        String formatted = (result % 1 == 0)
+
+        String formattedResult = (result % 1 == 0)
                 ? String.valueOf((int) result)
                 : String.format("%.2f", result);
 
-        history.add(num1 + " " + operator + " " + num2 + " = " + formatted);
+
+        String record = num1 + " " + operator + " " + num2 + " = " + formattedResult;
+        history.add(record);
+
         return result;
     }
 
-    public static List getHistory() {
-        return history;
+    public static List<String> getHistory() {
+        return new ArrayList<>(history); // 외부에서 변경 못하도록 복사본 반환
     }
 
     public static void removeOldest() {
@@ -46,5 +50,8 @@ public class Calculator {
             history.remove(0);
         }
     }
-}
 
+    public static void clearHistory() {
+        history.clear();
+    }
+}
