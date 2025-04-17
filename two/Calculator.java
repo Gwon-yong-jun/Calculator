@@ -1,9 +1,13 @@
 package calculator.two;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    private static List history = new List<>();
+
+
+    private static List<String> history = new ArrayList<>();
+
 
     public static double calculate(int num1, int num2, char operator) {
         double result;
@@ -22,7 +26,6 @@ public class Calculator {
                 if (num2 == 0) {
                     throw new ArithmeticException("0으로 나눌 수 없습니다.");
                 }
-
                 result = (double) num1 / num2;
                 break;
             default:
@@ -33,13 +36,16 @@ public class Calculator {
                 ? String.valueOf((int) result)
                 : String.format("%.2f", result);
 
+
         history.add(num1 + " " + operator + " " + num2 + " = " + formatted);
         return result;
     }
 
+
     public static List<String> getHistory() {
         return history;
     }
+
 
     public static void removeOldest() {
         if (!history.isEmpty()) {
