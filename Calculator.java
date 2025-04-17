@@ -2,7 +2,7 @@ package calculator;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-//DDD
+
 public class Calculator {
     private final Scanner scanner = new Scanner(System.in);
 
@@ -74,4 +74,3 @@ public class Calculator {
         };
     }
 }
-
