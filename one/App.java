@@ -7,7 +7,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int result;
+        double result; 
 
         while (true) {
             int num1 = 0;
@@ -40,13 +40,17 @@ public class App {
                 System.out.print("두번째 숫자 입력: ");
                 try {
                     num2 = scanner.nextInt();
+                    if (operator == '/' && num2 == 0) {
+                        System.out.println("0으로 나눌 수 없습니다. 다시 입력하세요.");
+                        continue;
+                    }
                     validSecondNumber = true;
                 } catch (InputMismatchException e) {
                     System.out.println("숫자를 입력하세요.");
                     scanner.nextLine();
                 }
             }
-
+            
             switch (operator) {
                 case '+':
                     result = num1 + num2;
@@ -58,12 +62,7 @@ public class App {
                     result = num1 * num2;
                     break;
                 case '/':
-                    if (num2 != 0) {
-                        result = num1 / num2;
-                    } else {
-                        System.out.println("0으로 나눌 수 없습니다.");
-                        continue;
-                    }
+                    result = (double) num1 / num2; 
                     break;
                 default:
                     System.out.println("잘못된 연산자입니다.");
