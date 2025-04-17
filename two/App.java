@@ -19,7 +19,7 @@ public class App {
                 num1 = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("숫자를 입력하세요.");
-                scanner.nextLine();
+                scanner.nextLine(); 
                 continue;
             }
 
@@ -46,27 +46,29 @@ public class App {
                     }
                 } catch (InputMismatchException e) {
                     System.out.println("숫자를 입력하세요.");
-                    scanner.nextLine();
+                    scanner.nextLine(); 
                 }
             }
 
             try {
                 result = Calculator.calculate(num1, num2, operator);
                 if (result % 1 == 0) {
-                    System.out.println("결과: " + (int) result);
+                    System.out.println("결과: " + (int) result); 
                 } else {
-                    System.out.printf("결과: %.2f\n", result);
+                    System.out.printf("결과: %.2f\n", result); 
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
                 continue;
             }
 
+            
             System.out.println("[계산 기록]");
-            for (String record : Calculator.getHistory()) {
+            for (Object record : Calculator.getHistory()) { 
                 System.out.println(record);
             }
 
+            
             System.out.print("가장 먼저 저장된 데이터를 삭제할까요? (yes / no): ");
             String answer = scanner.next();
             if (answer.equalsIgnoreCase("yes")) {
@@ -74,6 +76,7 @@ public class App {
                 System.out.println("삭제 완료.");
             }
 
+         
             System.out.print("계속 하시겠습니까? (exit 입력 시 종료): ");
             String input = scanner.next();
             if (input.equalsIgnoreCase("exit")) {
@@ -84,6 +87,6 @@ public class App {
             System.out.println();
         }
 
-        scanner.close();
+        scanner.close(); 
     }
 }
