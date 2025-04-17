@@ -13,7 +13,6 @@ public class App {
             boolean validOperator = false;
             char operator = ' ';
 
-            // 첫번째 숫자 입력
             System.out.print("첫번째 숫자 입력: ");
             while (true) {
                 try {
@@ -36,7 +35,6 @@ public class App {
                 }
             }
 
-
             int num2 = 0;
             while (true) {
                 System.out.print("두번째 숫자 입력: ");
@@ -48,7 +46,6 @@ public class App {
                     scanner.nextLine();
                 }
             }
-
 
             switch (operator) {
                 case '+':
@@ -69,7 +66,6 @@ public class App {
                     }
                     break;
             }
-
 
             System.out.println("결과: " + result);
 
