@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-
-
-    private static List<String> history = new ArrayList<>();
-
+    private static List history = new ArrayList();
 
     public static double calculate(int num1, int num2, char operator) {
         double result;
@@ -32,20 +29,19 @@ public class Calculator {
                 throw new IllegalArgumentException("잘못된 연산자입니다.");
         }
 
+        // Format the result to either an integer or a decimal with two places
         String formatted = (result % 1 == 0)
                 ? String.valueOf((int) result)
                 : String.format("%.2f", result);
 
-
+        // Record the calculation in history
         history.add(num1 + " " + operator + " " + num2 + " = " + formatted);
         return result;
     }
 
-
-    public static List<String> getHistory() {
+    public static List getHistory() {
         return history;
     }
-
 
     public static void removeOldest() {
         if (!history.isEmpty()) {
@@ -53,3 +49,4 @@ public class Calculator {
         }
     }
 }
+
