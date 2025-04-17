@@ -1,10 +1,9 @@
 package calculator.two;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    private static List<String> history = new ArrayList<>();
+    private static List history = new List<>();
 
     public static double calculate(int num1, int num2, char operator) {
         double result;
