@@ -19,7 +19,7 @@ public class App {
                 num1 = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("숫자를 입력하세요.");
-                scanner.nextLine(); // 버퍼 클리어
+                scanner.nextLine();
                 continue;
             }
 
@@ -43,7 +43,7 @@ public class App {
                     validSecondNumber = true;
                 } catch (InputMismatchException e) {
                     System.out.println("숫자를 입력하세요.");
-                    scanner.nextLine(); // 버퍼 클리어
+                    scanner.nextLine();
                 }
             }
 
