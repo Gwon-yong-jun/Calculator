@@ -1,12 +1,12 @@
-package calculator.two;
+package calculator.sss;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    public static List<String> history = new ArrayList<>();
+     List<String> s = new ArrayList<>();
 
-    public static double calculate(int num1, int num2, char operator) {
+    public double calculator(int num1, int num2, char operator) {
         double result;
 
         switch (operator) {
@@ -36,22 +36,18 @@ public class Calculator {
 
 
         String record = num1 + " " + operator + " " + num2 + " = " + formattedResult;
-        history.add(record);
+        s.add(record);
 
         return result;
     }
 
-    public static List<String> getHistory() {
-        return new ArrayList<>(history); // 외부에서 변경 못하도록 복사본 반환
+    public List<String> record() {
+        return new ArrayList<>(s);
     }
 
-    public static void removeOldest() {
-        if (!history.isEmpty()) {
-            history.remove(0);
+    public void remove() {
+        if (!s.isEmpty()) {
+            s.remove(0);
         }
-    }
-
-    public static void clearHistory() {
-        history.clear();
     }
 }
